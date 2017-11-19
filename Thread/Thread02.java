@@ -22,8 +22,11 @@ public class Thread02 extends Thread{
 			
 			/*
 			 * 스레드가 종료되고, 그 다음 로직을 수행해야할 때 
-			 * 필요한 메소드 : .join() */
+			 * 필요한 메소드 : .join() 
+			 * */
+			
 			try{
+				// 't' Thread 가 실행되고 종료할 때까지 기다림.
 				t.join();
 			}
 			catch(Exception e){
