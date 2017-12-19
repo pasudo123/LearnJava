@@ -17,7 +17,7 @@ public class ArrayListVector {
 		 * ArrayList 는 동시에 여러 쓰레드가 ArrayList 에 작업할 수 있다. (다중 스레드 작업 가능)
 		 * 멀티스레드 환경에서 ArrayList 를 작업하려는 경우 코드블럭을 동기화 시켜주어야 한다.
 		 * 
-		 * (2) 퍼모먼스, 성능 측면
+		 * (2) 퍼포먼스, 성능 측면
 		 * Vector 는 동기화되기 때문에 상대적으로 느리고 ArrayList 가 더 빠르다.
 		 * 
 		 * (3) 데이터 증가
