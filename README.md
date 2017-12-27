@@ -8,6 +8,8 @@
   * Memory.java : Stack Memory & Heap Memory
   * Reflection.java : Explain & Example Reflection
   * ReflectionSimple.java : Simple example Reflection
+  * StreamAPIExplain.java : Java8 Update StreamAPI Explain
+  * StreamAPIExample.java : Java8 Update StreamAPI Example
   
 * **JavaBasics**
   * Abstract.java : Explain about Abstract
@@ -31,3 +33,7 @@
   * Thread10.java : ThreadLocal Variable Example Code
   * Thread11.java : ThreadPool Example 1
   * Thread12.java : ThreadPool Example 2
+
+-----
+### reference
+1. https://www.journaldev.com/
