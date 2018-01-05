@@ -41,37 +41,61 @@ public class DataTypeAndOperator {
 		
 		/*
 		 * (1) boolean
-		 * - Size : 1bit
+		 * - Size : 8bits (= 1Byte)
 		 * - Range : NA (Not Available)
 		 * - Default Value : false
+		 * - 자바가 데이터를 다루는 최소 범위가 1Byte 이기 때문에 낭비지만 1Byte 사용
+		 * 
 		 * 
 		 * (2) char
-		 * - Size : 16bits
+		 * - Size : 16bits (= 2Byte)
 		 * - Range : Unicode Characters
 		 * - Default Value : '\u0000' or 0
+		 * - 자바의 경우 유니코드를 사용하는 동양의 글자 경우 2Byte 가 필요, char 경우 2Byte 사용
+		 * 
 		 * 
 		 * (3) byte
 		 * - Size : 8bits (= 1Byte)
 		 * - Range : [ -128 to 127 ] or [ -2^7 to 2^7-1 ]
 		 * - Default Value : 0
 		 * 
+		 * 
 		 * (4) short
-		 * - Size : 16bits
+		 * - Size : 16bits (= 2Byte)
 		 * - Range : [ -2^15 to 2^15-1 ]
 		 * - Default Value : 0
 		 * 
+		 * 
 		 * (5) int 
-		 * - Size : 32bits
+		 * - Size : 32bits (= 4Byte)
 		 * - Range : [ -2^31 to 2^31-1 ]
 		 * - Default Value : 0
 		 * 
+		 * 
 		 * (6) long
-		 * - Size : 64bits
+		 * - Size : 64bits (= 8Byte)
 		 * - Range : [ -2^63 to 2^63-1 ]
 		 * - Default Value : 0
 		 * 
+		 * 
 		 * (7) float
+		 * - Size : 32bits (= 4Byte)
+		 * 
+		 * 
 		 * (8) double
+		 * - Size : 64bits (= 8Byte)
+		 * 
+		 * 
+		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		 * Range 범위의 값이 바이트 크기보다 1이 작은 이유는, 숫자를 표현하는 데이터타입에 있어서 
+		 * 맨 앞의 비트를 부호로 나타내는 비트로 사용하기 때문이다. 범위안에는 중간에 0이 존재한다. 
+		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		 * JVM 의 피연산자 스택이 피연사자를 4Byte 단위로 저장하기 때문에
+		 * int 보다 작은 자료형의 값을 계산하는 경우 int 형으로 캐스팅되어 연산이 수행
+		 * 
+		 * 정수형 데이터를 사용하게 되면 JVM에서 기본적으로 int형 데이터타입의 데이터로 인식을 해준다.
+		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		 * 
 		 * */
 	}
 }
