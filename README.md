@@ -18,6 +18,13 @@
   * <a href="https://github.com/pasudo123/LearnJava/blob/master/JavaBasics/Java8InterfaceChanges01.java">Java8InterfaceChanges01.java</a> : Java8 Update Interface Default Method
   * <a href="https://github.com/pasudo123/LearnJava/blob/master/JavaBasics/Java8InterfaceChanges02.java">Java8InterfaceChanges02.java</a> : Java8 Update Interface Static Method
   * <a href="https://github.com/pasudo123/LearnJava/blob/master/JavaBasics/DataTypeAndOperator.java">DataTypeAndOperator.java</a> : DataType & StackMemory & HeapMemory Explain
+
+* **Enum**
+  * Usage.java : ThreadStates (Enum Type) & ThreadStatesConstant (Class) 에 대한 예제 (타입 안정 및 불안정)
+  * ThreadStates.java : Enum Type
+  * ThreadStatesConstant.java : Class
+  * ThreadStatesEnum.java : Enum Type 정리 및 Enum Type 내부에서 할 수 있는 것들
+  * JavaEnumExample.java : 열거형을 사용하는 이점 및 열거형 유형과 그 해당 기능들, 예제학습
   
 * **Thread**
   * <a href="https://github.com/pasudo123/LearnJava/blob/master/Thread/Thread01.java">Thread01.java</a> : Basic Trhead
