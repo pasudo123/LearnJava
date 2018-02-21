@@ -23,7 +23,14 @@ interface MyData{
 
 // 올바르게 구현되지 못한 클래스
 class MyDatalmpl implements MyData{
-	// static method isNull() 을 오버라이딩 하였다.
+	// 해당 클래스 MyDataImpl 는 isNull() 메소드를 구현하는데 있어서,
+	// static method isNull() 을 오버라이딩 하지 못한다.
+	// @Override 애노테이션 처리를 하면 컴파일 에러가 발생한다.
+	
+	// 인터페이스 static method 는 유틸리티 메소드를 제공하는데,
+	// 널 점검이나 콜렉션 정렬등을 제공하는데 적합하다.
+	// 결과적으로 static method 를 오버라이딩 하지 못하게 하여 보안을 하는데 유리하다.
+	
 	public boolean isNull(String str){
 		System.out.println("lmpl Null Check");
 		
@@ -37,10 +44,6 @@ public class Java8InterfaceChanges02 {
 		obj.print("");
 		obj.isNull("abc");
 		
-//		System.out.println(obj.isNull("abc"));
-		
-		// 인터페이스 static method 는 유틸리티 메소드를 제공하는데,
-		// 널 점검이나 콜렉션 정렬등을 제공하는데 적합하다.
-		// static method 를 오버라이딩을 하지 못하게 하여 보안을 하는데 유리하다.
+		System.out.println(obj.isNull("abc"));
 	}
 }
