@@ -54,6 +54,10 @@ class RealizeClass implements Interface1, Interface2{
 	
 	@Override
 	public void log(String str){
+		// [ 문제  ]
+		// public void log(String str) 메소드를 제거하면 컴파일 에러가 나온다.
+		
+		// [ 이유  ]
 		// 자바는 다중상속을 허용하지 않는다. 이러한 문제를  Diamond Problem 이라고 뜻한다.
 		// 왜냐하면 상속받는 클래스가 부모클래스의 어느 슈퍼클래스에 대한 메소드를 사용할지 문제가 생기기 때문
 		//
