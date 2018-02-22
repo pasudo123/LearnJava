@@ -80,11 +80,11 @@ public enum ThreadStatesEnum implements Closeable{
  * 	    **모든 enum 필드는 생성자에 따라서 디폴트 혹은 파라미터 있는 생성자를 만들 수 있다.
  * (3)  new 연산자를 사용해서 enum의 인스턴스를 만들 수 없다.
  * (4)  enum 에서 추상 메소드를 선언할 수 있으며, **모든 enum 필드는 추상 메소드를 구현하여야 한다.
- * (5)  enum 필드는 네임스페이스를 가지고 있다. ThreadStates 등과 같은 클래스 이름을 통해 열거형 필드를 이용 가능하다.
+ * (5)  enum 상수는 네임스페이스가 가능하다. 위의 예시에서 ThreadStatesEnum.START  가 가능하는 의미.
  * (6)  enum 필드를 새롭게 추가할 수 있다.
  * (7)  enum 상수는 대문자와 언더바로 작성한다.
  * (8)  enum 상수는 기본이 static final 이다.
- * (9)  enum 변수는 언제든 변경이 가능하다. 위의 예어서 priority 가 대표적인 예이다.
+ * (9)  enum 필드는 언제든 변경이 가능하다. 위의 예어서 priority 가 대표적인 예이다.
  * (10) enum 상수는 static final 이기 때문에 "==" or equals() 메소드를 사용하여 안전하게 비교할 수 있다.
  * 
  *ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ**/
