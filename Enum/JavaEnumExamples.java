@@ -49,6 +49,26 @@ public class JavaEnumExamples {
 			System.out.println(entrySet.getValue());
 			System.out.println("==================");
 		}
+		
+//		>> key = START implements. Priority = 1
+//		>> key = Default ThreadStatesConstructors implementation. Priority = 2
+//		>> key = Default ThreadStatesConstructors implementation. Priority = 3
+//		>> key = Default ThreadStatesConstructors implementation. Priority = 4
+//		>> START implements. Priority = 1
+//		>> Thread is started
+//		>> ==================
+//		
+//		>> Default ThreadStatesConstructors implementation. Priority = 2
+//		>> Thread is running
+//		>> ==================
+//		
+//		>> Default ThreadStatesConstructors implementation. Priority = 3
+//		>> Thread is waiting
+//		>> ==================
+//		
+//		>> Default ThreadStatesConstructors implementation. Priority = 4
+//		>> Thread is dead
+//		>> ==================
 	}
 	
 	
@@ -66,6 +86,11 @@ public class JavaEnumExamples {
 		for(ThreadStatesEnum testEnum : enumSet){
 			System.out.println("Using EnumSet, Priority = " + testEnum.getPriority());
 		}
+		
+//		>> Using EnumSet, Priority = 1
+//		>> Using EnumSet, Priority = 2
+//		>> Using EnumSet, Priority = 3
+//		>> Using EnumSet, Priority = 4
 	}
 	
 	
@@ -89,6 +114,13 @@ public class JavaEnumExamples {
 		case DEAD:
 			System.out.println("DEAD thread");
 		}
+		
+//		-- 두 개의 출력이 나타난다.
+//		-- usingEnumInSwitch(ThreadStatesEnum.START);
+//		-- usingEnumInSwitch(ThreadStatesEnum.DEAD);
+		
+//		>> START thread
+//		>> DEAD thread
 	}
 	
 	
@@ -107,6 +139,20 @@ public class JavaEnumExamples {
 			System.out.println(th.name());	// enum 상수 필드
 			System.out.println(th.toString() + " :: Priority = " + th.getPriority());
 			System.out.println();
+			
+/**			[  for(ThreadStatesEnum th : thArray)  반복 구문 내부 출력]																			**/
+			
+//			>> START
+//			>> START implements. Priority = 1 :: Priority = 1
+//
+//			>> RUNNING
+//			>> Default ThreadStatesConstructors implementation. Priority = 2 :: Priority = 2
+//
+//			>> WAITING
+//			>> Default ThreadStatesConstructors implementation. Priority = 3 :: Priority = 3
+//
+//			>> DEAD
+//			>> Default ThreadStatesConstructors implementation. Priority = 4 :: Priority = 4
 		}
 	}
 	
@@ -121,6 +167,7 @@ public class JavaEnumExamples {
 		
 		ThreadStatesEnum th = Enum.valueOf(ThreadStatesEnum.class, "START");
 		System.out.println("th Priority = " + th.getPriority());
+//		>> th Priority = 1
 	}
 	
 	
@@ -137,16 +184,21 @@ public class JavaEnumExamples {
 		
 		thc = ThreadStatesEnum.DEAD;
 		System.out.println("Priority is : " + thc.getPriority());
+//		>> Priority is : 4
 		
 		thc = ThreadStatesEnum.DEAD;
 		System.out.println("Using overriden method. : " + thc.toString());
+//		>> Using overriden method. : Default ThreadStatesConstructors implementation. Priority = 4
 		
 		thc = ThreadStatesEnum.START;
 		System.out.println("Using overriden method. : " + thc.toString());
+//		>> Using overriden method. : START implements. Priority = 1
 		
 		thc.setPriority(10);
 		System.out.println("Enum Constant variable changed priority value : "+thc.getPriority());
-	
+//		>> Enum Constant variable changed priority value : 10
+		
 		thc.close();
+//		>> Close of Enum
 	}
 }
