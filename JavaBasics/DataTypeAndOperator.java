@@ -112,5 +112,50 @@ public class DataTypeAndOperator {
 		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 		 * 
 		 * */
+		
+		/** ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ **/
+		Byte byteMinValue = Byte.MIN_VALUE;
+		Byte byteMaxValue = Byte.MAX_VALUE;
+		
+		Short shortMinValue = Short.MIN_VALUE;
+		Short shortMaxValue = Short.MAX_VALUE;
+		
+		Integer intMinValue = Integer.MIN_VALUE;
+		Integer intMaxValue = Integer.MAX_VALUE;
+		
+		Long longMinValue = Long.MIN_VALUE;
+		Long longMaxValue = Long.MAX_VALUE;
+		
+		Float floatMinValue = Float.MIN_VALUE;
+		Float floatMaxValue = Float.MAX_VALUE;
+		
+		Double doubleMinValue = Double.MIN_VALUE;
+		Double doubleMaxValue = Double.MAX_VALUE;
+		
+		Boolean booleanFalse = Boolean.FALSE;
+		Boolean booleanTrue = Boolean.TRUE;
+		
+		/**
+		 * Byte.MIN_VALUE : -128
+		 * Byte.MAX_VALUE : 127
+		 * 
+		 * Short.MIN_VALUE : -32768
+		 * Short.MAX_VALUE : 32767
+		 * 
+		 * Integer.MIN_VALUE : -2147483648
+		 * Integer.MAX_VALUE : 2147483647
+		 * 
+		 * Long.MIN_VALUE : -9223372036854775808
+		 * Long.MAX_VALUE : 9223372036854775807
+		 * 
+		 * Float.MIN_VALUE : 1.4E-45
+		 * Float.MAX_VALUE : 3.4028235E38
+		 * 
+		 * Double.MIN_VALUE : 4.9E-324
+		 * Double.MAX_VALUE : 1.7976931348623157E308
+		 * 
+		 * Boolean.FALSE : false
+		 * Boolean.TRUE : true
+		 **/
 	}
 }
