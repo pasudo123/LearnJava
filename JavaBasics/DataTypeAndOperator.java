@@ -45,7 +45,7 @@ public class DataTypeAndOperator {
 		 * - Range : NA (Not Available)
 		 * - Default Value : false
 		 * - 자바가 데이터를 다루는 최소 범위가 1Byte 이기 때문에 낭비지만 1Byte 사용
-		 * 
+		 *
 		 * 
 		 * (2) char
 		 * - Size : 16bits (= 2Byte)
@@ -58,8 +58,14 @@ public class DataTypeAndOperator {
 		 * - Size : 8bits (= 1Byte)
 		 * - Range : [ -128 to 127 ] or [ -2^7 to 2^7-1 ]
 		 * - Default Value : 0
+		 * - [ 범위에 대한 고찰 ]
+		 * 벙뮈가 -128 ~ +127 인 것은 2^8 이 256 인데, 등호를 포함하게 된다.
+		 * 따라서 가장 최상위 비트를 MSB (Most Significant Bit) 라 칭하고,
+		 * 7자리의 비트수만 이용한다. 2^7 이 128 이며 양수는 +0 을 포함하기 때문에 0 ~ 127까지이다.
+		 * 반면에 음수는 -1 ~ -128까지 그대로 수의 표현이 가능하다.
+		 * 따라서 전체 범위는 -2^7 ~ 2^7-1 이 되는 것이다.
 		 * 
-		 * 
+		 *
 		 * (4) short
 		 * - Size : 16bits (= 2Byte)
 		 * - Range : [ -2^15 to 2^15-1 ]
