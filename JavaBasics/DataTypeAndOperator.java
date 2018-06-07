@@ -45,7 +45,7 @@ public class DataTypeAndOperator {
 		 * - Range : NA (Not Available)
 		 * - Default Value : false
 		 * - 자바가 데이터를 다루는 최소 범위가 1Byte 이기 때문에 낭비지만 1Byte 사용
-		 * 
+		 *
 		 * 
 		 * (2) char
 		 * - Size : 16bits (= 2Byte)
@@ -58,8 +58,16 @@ public class DataTypeAndOperator {
 		 * - Size : 8bits (= 1Byte)
 		 * - Range : [ -128 to 127 ] or [ -2^7 to 2^7-1 ]
 		 * - Default Value : 0
+		 * - [ 범위에 대한 고찰 ]
+		 * 벙뮈가 -128 ~ +127 인 것은 2^8 이 256 인데, 등호를 포함하게 된다.
+		 * 따라서 가장 최상위 비트를 MSB (Most Significant Bit) 라 칭하고,
+		 * 7자리의 비트수만 이용한다. 2^7 이 128 이며 양수는 +0 을 포함하기 때문에 0 ~ 127까지이다.
+		 * 반면에 음수는 -1 ~ -128까지 그대로 수의 표현이 가능하다.
+		 * 따라서 전체 범위는 -2^7 ~ 2^7-1 이 되는 것이다.
+		 * 좀 더 쉬운 생각은 
+		 * 2^8 / 2 를 하였을 때 동등하게 분배되는 것이 아닌 양수는 0을 취하기 때문에 -1을 한다고 생각하면 된다.
 		 * 
-		 * 
+		 *
 		 * (4) short
 		 * - Size : 16bits (= 2Byte)
 		 * - Range : [ -2^15 to 2^15-1 ]
@@ -85,17 +93,77 @@ public class DataTypeAndOperator {
 		 * (8) double
 		 * - Size : 64bits (= 8Byte)
 		 * 
-		 * 
 		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		 *
+		 * 명시적 데이터 값 (리터럴)
+		 * 자바에서는 명시적으로 사용하는 리터럴 값을 사용한다.
+		 *
+		 * 자바의 정수 리터럴은 기본이 int 형이다.
+		 * 따라서 long 타입의 정수를 리터럴로 표현하기 위해서는 숫자 끝에 L(l)을 붙인다.
+		 *
+		 * 반면에,
+		 * 자바의 실수 리터럴은 기본이 double 형이다.
+		 *  float 타입의 실수를 리터럴로 표현하기 위해서 숫자 끝에 F(f)를 붙인다.
+		 *
+		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		 *
 		 * Range 범위의 값이 바이트 크기보다 1이 작은 이유는, 숫자를 표현하는 데이터타입에 있어서 
 		 * 맨 앞의 비트를 부호로 나타내는 비트로 사용하기 때문이다. 범위안에는 중간에 0이 존재한다. 
+		 *
 		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		 *
 		 * JVM 의 피연산자 스택이 피연사자를 4Byte 단위로 저장하기 때문에
 		 * int 보다 작은 자료형의 값을 계산하는 경우 int 형으로 캐스팅되어 연산이 수행
 		 * 
 		 * 정수형 데이터를 사용하게 되면 JVM에서 기본적으로 int형 데이터타입의 데이터로 인식을 해준다.
+		 *
 		 * ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 		 * 
 		 * */
+		
+		/** ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ **/
+		Byte byteMinValue = Byte.MIN_VALUE;
+		Byte byteMaxValue = Byte.MAX_VALUE;
+		
+		Short shortMinValue = Short.MIN_VALUE;
+		Short shortMaxValue = Short.MAX_VALUE;
+		
+		Integer intMinValue = Integer.MIN_VALUE;
+		Integer intMaxValue = Integer.MAX_VALUE;
+		
+		Long longMinValue = Long.MIN_VALUE;
+		Long longMaxValue = Long.MAX_VALUE;
+		
+		Float floatMinValue = Float.MIN_VALUE;
+		Float floatMaxValue = Float.MAX_VALUE;
+		
+		Double doubleMinValue = Double.MIN_VALUE;
+		Double doubleMaxValue = Double.MAX_VALUE;
+		
+		Boolean booleanFalse = Boolean.FALSE;
+		Boolean booleanTrue = Boolean.TRUE;
+		
+		/**
+		 * Byte.MIN_VALUE : -128
+		 * Byte.MAX_VALUE : 127
+		 * 
+		 * Short.MIN_VALUE : -32768
+		 * Short.MAX_VALUE : 32767
+		 * 
+		 * Integer.MIN_VALUE : -2147483648
+		 * Integer.MAX_VALUE : 2147483647
+		 * 
+		 * Long.MIN_VALUE : -9223372036854775808
+		 * Long.MAX_VALUE : 9223372036854775807
+		 * 
+		 * Float.MIN_VALUE : 1.4E-45
+		 * Float.MAX_VALUE : 3.4028235E38
+		 * 
+		 * Double.MIN_VALUE : 4.9E-324
+		 * Double.MAX_VALUE : 1.7976931348623157E308
+		 * 
+		 * Boolean.FALSE : false
+		 * Boolean.TRUE : true
+		 **/
 	}
 }
